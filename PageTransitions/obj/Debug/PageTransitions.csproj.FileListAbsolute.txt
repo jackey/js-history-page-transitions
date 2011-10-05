@@ -1,0 +1,13 @@
+D:\Dev\Trash\PageTransitions\PageTransitions\bin\PageTransitions.dll
+D:\Dev\Trash\PageTransitions\PageTransitions\bin\PageTransitions.pdb
+D:\Dev\Trash\PageTransitions\PageTransitions\bin\Microsoft.Web.Infrastructure.dll
+D:\Dev\Trash\PageTransitions\PageTransitions\bin\System.Web.Helpers.dll
+D:\Dev\Trash\PageTransitions\PageTransitions\bin\System.Web.Mvc.dll
+D:\Dev\Trash\PageTransitions\PageTransitions\bin\System.Web.Providers.dll
+D:\Dev\Trash\PageTransitions\PageTransitions\bin\System.Web.Razor.dll
+D:\Dev\Trash\PageTransitions\PageTransitions\bin\System.Web.WebPages.Deployment.dll
+D:\Dev\Trash\PageTransitions\PageTransitions\bin\System.Web.WebPages.dll
+D:\Dev\Trash\PageTransitions\PageTransitions\bin\System.Web.WebPages.Razor.dll
+D:\Dev\Trash\PageTransitions\PageTransitions\obj\Debug\ResolveAssemblyReference.cache
+D:\Dev\Trash\PageTransitions\PageTransitions\obj\Debug\PageTransitions.dll
+D:\Dev\Trash\PageTransitions\PageTransitions\obj\Debug\PageTransitions.pdb

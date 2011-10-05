@@ -1,0 +1,15 @@
+﻿@model System.Collections.Generic.List<PageTransitions.PersonInfo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Hardcore</h2>
+
+<ul id="peeplist">
+@foreach (var personInfo in Model)
+{
+    <li>
+        <p><a href="/baseline/edit/@personInfo.Id">Edit</a> - <a href="/baseline/view/@personInfo.Id">View</a> - @personInfo.Name</p>
+    </li>
+}
+</ul>

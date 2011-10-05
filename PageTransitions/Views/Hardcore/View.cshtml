@@ -1,0 +1,25 @@
+﻿@model PageTransitions.PersonInfo
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+@Html.DisplayForModel()
+
+<p><a class="edit" href="/hardcore/edit/@Model.Id">Edit</a></p>
+<a href="/hardcore/normalnonfunkyview">View Regular Page</a>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('a.edit').click(function () {
+            var url = $(this).attr('href');
+            $.get(url, function (data) { $('section.content-wrapper').html(data); });
+
+            history.pushState('{ state: true }', 'teh title', url);
+
+            return false;
+        });
+    });
+    
+</script>
