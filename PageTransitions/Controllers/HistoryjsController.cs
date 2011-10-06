@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace PageTransitions.Controllers
 {
-    public class HardcoreController : SharedController
+    public class HistoryjsController : SharedController
     {
         private PersonInfoRepository _repo = new PersonInfoRepository();
 
@@ -37,6 +37,10 @@ namespace PageTransitions.Controllers
         public ActionResult View(int? id)
         {
             var peep = _repo.GetPerson(id.Value);
+
+            if (this.Request.IsAjaxRequest())
+                return PartialView(peep);
+
             return HistoryView("View", peep);
         }
 

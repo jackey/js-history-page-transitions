@@ -12,7 +12,7 @@
     <span><a href="/hardcore/view/@Model.Id" class="cancel">Cancel</a></span>
 }
 
-<a href="/hardcore/normalnonfunkyview">View Regular Page</a>
+<a href="/historyjs/normalnonfunkyview">View Regular Page</a>
 
 <script type="text/javascript">
 
@@ -23,11 +23,11 @@
         $('input[type=button]').click(function () {
             var values = $('form').serialize();
             $.ajax({
-                url: '/hardcore/edit',
+                url: '/historyjs/edit',
                 data: values,
                 type: 'POST',
                 success: function (data) {
-                    var url = '/hardcore/view/' + $('#Id').val();
+                    var url = '/historyjs/view/' + $('#Id').val();
                     $('section.content-wrapper').html(data);
                     history.pushState('{ state: true }', 'teh title', url);
                 }

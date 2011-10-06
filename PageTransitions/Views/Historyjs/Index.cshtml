@@ -3,20 +3,21 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Hardcore</h2>
+<h2>History js</h2>
 
 <ul id="peeplist">
 @foreach (var personInfo in Model)
 {
     <li>
-        <p><a href="/hardcore/edit/@personInfo.Id" class="edit">Edit</a> - <a href="/hardcore/view/@personInfo.Id" class="view">View</a> - @personInfo.Name</p>
+        <p><a href="/historyjs/edit/@personInfo.Id" class="edit">Edit</a> - <a href="/historyjs/view/@personInfo.Id" class="view">View</a> - @personInfo.Name</p>
     </li>
 }
 </ul>
 
-<a href="/hardcore/normalnonfunkyview">View Regular Page</a>
+<a href="/historyjs/normalnonfunkyview">View Regular Page</a>
 
 <script type="text/javascript">
+
     $(document).ready(function () {
         $('#peeplist a.edit').ajaxifyLink('section.content-wrapper');
         $('#peeplist a.view').ajaxifyLink('section.content-wrapper');
