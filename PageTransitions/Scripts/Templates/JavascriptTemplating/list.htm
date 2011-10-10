@@ -1,0 +1,14 @@
+﻿<h2>Javascript Templating</h2>
+
+<ul id="peeplist">
+<% for (var i = 0; i < this.length; i++) { %>
+    <li>
+        <p>
+            <a href="/javascripttemplating/edit/<%= this[i].Id %>" class="edit" data-template="/scripts/text.js!/scripts/Templates/JavascriptTemplating/edit.htm">Edit</a> - 
+            <a href="/javascripttemplating/view/<%= this[i].Id %>" class="view" data-module="/scripts/Templates/JavascriptTemplating/view.js">View</a> - <%= this[i].Name %>
+        </p>
+    </li>
+<% } %>
+</ul>
+
+<a href="/javascripttemplating/normalnonfunkyview">View Regular Page</a>

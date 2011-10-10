@@ -1,0 +1,38 @@
+﻿@model PageTransitions.PersonInfo
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{ 
+    @Html.EditorForModel()
+    <input type="button" value="Save" id="dork" />
+    <span><a href="/javascripttemplating/view/@Model.Id" class="cancel">Cancel</a></span>
+}
+
+<a href="/javascripttemplating/normalnonfunkyview">View Regular Page</a>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('a.cancel').ajaxifyLink('section.content-wrapper');
+
+        $('input[type=button]').click(function () {
+            var values = $('form').serialize();
+            $.ajax({
+                url: '/javascripttemplating/edit',
+                data: values,
+                type: 'POST',
+                success: function (data) {
+                    var url = '/javascripttemplating/view/' + $('#Id').val();
+                    $('section.content-wrapper').html(data);
+                    history.pushState('{ state: true }', 'teh title', url);
+                }
+            });
+        });
+    });
+    
+</script>

@@ -1,0 +1,36 @@
+﻿<h2>Edit</h2>
+
+<form action="/javascripttemplating/edit/3" method="post">    <div class="editor-label">        <label for="Id">Id</label>    </div>    <div class="editor-field">        <input class="text-box single-line" data-val="true" data-val-number="The field Id must be a number." data-val-required="The Id field is required." id="Id" name="Id" type="text" value="<%= Id %>" /> <span class="field-validation-valid" data-valmsg-for="Id" data-valmsg-replace="true"></span>    </div>
+    <div class="editor-label">        <label for="Name">Name</label>    </div>    <div class="editor-field">        <input class="text-box single-line" id="Name" name="Name" type="text" value="<%= Name %>" /> <span class="field-validation-valid" data-valmsg-for="Name" data-valmsg-replace="true"></span>    </div>
+    <div class="editor-label">        <label for="Age">Age</label>    </div>    <div class="editor-field">        <input class="text-box single-line" data-val="true" data-val-number="The field Age must be a number." data-val-required="The Age field is required." id="Age" name="Age" type="text" value="<%= Age %>" /> <span class="field-validation-valid" data-valmsg-for="Age" data-valmsg-replace="true"></span>    </div>
+    <input type="button" value="Save" id="dork" />
+    <span><a href="/javascripttemplating/view/<%= Id %>" class="cancel" data-module="/scripts/Templates/JavascriptTemplating/view.js">Cancel</a></span>
+</form>
+<a href="/javascripttemplating/normalnonfunkyview">View Regular Page</a>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('a.cancel').ajaxifyLink('section.content-wrapper');
+
+        $('input[type=button]').click(function () {
+            var values = $('form').serialize();
+            $.ajax({
+                url: '/javascripttemplating/edit',
+                data: values,
+                type: 'POST',
+                success: function (data) {
+
+                    require(['/scripts/Templates/JavascriptTemplating/view.js'], function (js) {
+                        js.template('section.content-wrapper', data);
+                    });
+
+                    var url = '/javascripttemplating/view/' + $('#Id').val();
+                    var state = { module: '/scripts/Templates/JavascriptTemplating/view.js', url: url };
+
+                    history.pushState(state, 'teh title', url);
+                }
+            });
+        });
+    });</script>

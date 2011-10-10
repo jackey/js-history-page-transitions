@@ -6,7 +6,7 @@ namespace PageTransitions.Controllers
 {
     public class SharedController : Controller
     {
-        public ActionResult HistoryView(string name, object model)
+        public virtual ActionResult HistoryView(string name, object model)
         {
             if (Request.IsAjaxRequest())
             {

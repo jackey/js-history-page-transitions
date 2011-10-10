@@ -5,6 +5,10 @@
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
         <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
         <script src="@Url.Content("~/Scripts/jquery-1.6.4.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/require.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/javascripttemplating.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/underscore.js")" type="text/javascript"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
@@ -41,5 +45,41 @@
             <div class="content-wrapper">
             </div>
         </footer>
+
+        <script type="text/javascript">
+
+//            var popped = ('state' in window.history), initialURL = location.href
+
+//            $(window).bind('popstate', function (event) {
+
+//                console.log('poppin');
+//                var initialPop = !popped && location.href == initialURL
+//                popped = true
+//                if (initialPop)
+//                    return;
+
+//                var state = event.state
+
+//                if (state) {
+//                    alert('using history data');
+//                    $.get(location.pathname, function (data) { $('section.content-wrapper').html(data); });
+//                }
+//                else {
+//                //    alert('not history');
+//                    window.location = location.href
+//                }
+//            });
+
+            onpopstate = function (event) {
+                console.log('other', event);
+            }
+
+            window.addEventListener('popstate', function (event) {
+                //alert('popping state');
+
+                console.log('popstate event', event, event.state);
+                //$.get(location.pathname, function (data) { $('section.content-wrapper').html(data); });
+            });
+        </script>
     </body>
 </html>

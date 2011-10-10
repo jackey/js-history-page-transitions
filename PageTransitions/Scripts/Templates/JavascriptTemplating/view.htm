@@ -1,0 +1,21 @@
+﻿<h2>View</h2>
+
+<div class="display-label">Id</div>
+<div class="display-field"><%= Id %></div>
+<div class="display-label">Name</div>
+<div class="display-field"><%= Name %></div>
+<div class="display-label">Age</div>
+<div class="display-field"><%= Age %></div>
+
+<p><a class="edit" href="/javascripttemplating/edit/<%= Id %>" data-module="/scripts/Templates/JavascriptTemplating/edit.js">Edit</a></p>
+<a href="/javascripttemplating/normalnonfunkyview">View Regular Page</a>
+<a class="backToList" href="/javascripttemplating/index" data-module="/scripts/Templates/JavascriptTemplating/list.js">Back To List</a>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('a.edit').ajaxifyLink('section.content-wrapper');
+        $('a.backToList').ajaxifyLink('section.content-wrapper');
+    });
+    
+</script>

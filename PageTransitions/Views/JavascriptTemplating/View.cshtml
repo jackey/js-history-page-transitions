@@ -1,0 +1,21 @@
+﻿@model PageTransitions.PersonInfo
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+@Html.DisplayForModel()
+
+<p><a class="edit" href="/javascripttemplating/edit/@Model.Id" data-module="/scripts/Templates/JavascriptTemplating/edit.js">Edit</a></p>
+<a href="/javascripttemplating/normalnonfunkyview">View Regular Page</a>
+<a class="backToList" href="/javascripttemplating/index">Back To List</a>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('a.edit').ajaxifyLink('section.content-wrapper');
+        $('a.backToList').ajaxifyLink('section.content-wrapper');
+    });
+    
+</script>
