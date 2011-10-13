@@ -636,3 +636,10 @@ ul#social li {
             width: auto;
         }    
 }
+
+
+body.jquerymobile h2
+{
+    display: block;
+    margin: 0 0 25px 0;
+}
