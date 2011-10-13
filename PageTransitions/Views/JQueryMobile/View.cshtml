@@ -1,0 +1,42 @@
+﻿@model PageTransitions.PersonInfo
+@{
+    ViewBag.Title = "View";
+}
+<div id="body" data-role="page">
+
+    <header data-role="header">
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">Page Transitions!</p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    @Html.Partial("_LogOnPartial")
+                </section>
+                <nav>
+                    <ul id="menu">
+                        <li>@Html.ActionLink("Home", "Index", "Home", new { }, new { data_ajax = "false" })</li>
+                        <li>@Html.ActionLink("Baseline", "Index", "Baseline", new { }, new { data_ajax = "false" })</li>
+                        <li>@Html.ActionLink("Hardcore", "Index", "Hardcore", new { }, new { data_ajax = "false" })</li>
+                        <li>@Html.ActionLink("History js", "Index", "Historyjs", new { }, new { data_ajax = "false" })</li>
+                        <li>@Html.ActionLink("Javascript Templating", "Index", "JavascriptTemplating", new { }, new { data_ajax = "false" })</li>
+                        <li>@Html.ActionLink("jQuery Mobile", "Index", "JQueryMobile", new { }, new { data_ajax = "false" })</li>
+                        <li>@DateTime.Now.ToString()</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="content-wrapper main-content clear-fix" data-role="content">
+        <h2>View</h2>
+
+        @Html.DisplayForModel()
+
+        <p><a href="/jquerymobile/edit/@Model.Id">Edit</a></p>
+    </section>
+    <footer data-role="footer">
+        <div class="content-wrapper">
+        </div>
+    </footer>
+</div>
+

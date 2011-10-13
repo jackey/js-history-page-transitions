@@ -19,34 +19,11 @@
 
 <a href="/javascripttemplating/normalnonfunkyview">View Regular Page</a>
 
-<br />
-<button id="button1">1</button>
-<br />
-<button id="button2">2</button>
-<br />
-<button id="button3">3</button>
-<br />
-<div id="appendee"></div>
+
 
 <script type="text/javascript">
     $(document).ready(function () {
         $('#peeplist a.edit').ajaxifyLink('section.content-wrapper');
         $('#peeplist a.view').ajaxifyLink('section.content-wrapper');
-
-        $('#button1').click(function () {
-            require(['/scripts/hardcore.js']);
-        });
-        $('#button2').click(function () {
-            require(['/scripts/history.js']);
-        });
-
-        $('#button3').click(function () {
-            require(['/scripts/history.js', '/scripts/text.js!/scripts/Templates/template1.htm'],
-                function (things, stuff) {
-                    $('#appendee').append(stuff);
-                });
-        });
     });
-    
-
 </script>
